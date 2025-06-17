@@ -1,6 +1,4 @@
-from flask import Flask
-
-app = Flask(__name__)
+from app import app
 
 
 @app.route('/hello')
@@ -40,8 +38,3 @@ def hello_user(name, age):
         return f'Hello, {name}! You are {age} years old.'
     except ValueError:
         return 'Valid name or age'
-
-
-# Запуск приложения
-if __name__ == "__main__":
-    app.run(debug=True)
